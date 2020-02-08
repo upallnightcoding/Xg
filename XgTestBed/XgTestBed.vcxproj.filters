@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\XgTestBed.cpp">
+      <Filter>testbed</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>testbed</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="testbed">
+      <UniqueIdentifier>{3e0c5c24-71bc-4cfb-987a-1481ebce2213}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pch.h">
+      <Filter>testbed</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
