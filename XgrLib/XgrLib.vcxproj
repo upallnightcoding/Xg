@@ -70,20 +70,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)bin\XgrLib\$(Plateform)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\XgrLib\intermediates\$(Plateform)$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -162,15 +162,18 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Xg.h" />
     <ClInclude Include="src\XgRender.h" />
     <ClInclude Include="src\XgVLib.h" />
     <ClInclude Include="src\XgGraphicsLayer.h" />
+    <ClInclude Include="src\XgObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\VulkanTest.cpp" />
     <ClCompile Include="src\XgRender.cpp" />
     <ClCompile Include="src\XgVLib.cpp" />
     <ClCompile Include="src\XgGraphicsLayer.cpp" />
+    <ClCompile Include="src\XgObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

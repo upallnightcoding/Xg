@@ -1,6 +1,8 @@
 #pragma once
 
-#define GLFW_INCLUDE_VULKAN
+#include "Xg.h"
+
+/*#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 #define GLM_FORCE_RADIANS
@@ -8,7 +10,7 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/hash.hpp>
+#include <glm/gtx/hash.hpp>*/
 
 /* 
 #define STB_IMAGE_IMPLEMENTATION
@@ -17,6 +19,8 @@
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
 */
+
+#include "XgObject.h"
 
 #include <iostream>
 #include <fstream>
@@ -30,7 +34,7 @@
 #include <array>
 #include <optional>
 #include <set>
-#include <unordered_map>
+//#include <unordered_map>
 
 const int WIDTH = 1000;
 const int HEIGHT = 800;
@@ -89,7 +93,7 @@ struct SwapChainSupportDetails {
 	std::vector<VkPresentModeKHR> presentModes;
 };
 
-struct Vertex {
+/*struct Vertex {
 	glm::vec3 pos;
 	glm::vec3 color;
 	glm::vec2 texCoord;
@@ -127,15 +131,15 @@ struct Vertex {
 	bool operator==(const Vertex& other) const {
 		return pos == other.pos && color == other.color && texCoord == other.texCoord;
 	}
-};
+};*/
 
-namespace std {
+/*namespace std {
 	template<> struct hash<Vertex> {
 		size_t operator()(Vertex const& vertex) const {
 			return ((hash<glm::vec3>()(vertex.pos) ^ (hash<glm::vec3>()(vertex.color) << 1)) >> 1) ^ (hash<glm::vec2>()(vertex.texCoord) << 1);
 		}
 	};
-}
+}*/
 
 struct UniformBufferObject {
 	alignas(16) glm::mat4 model;
@@ -150,7 +154,7 @@ public:
 	virtual ~XgVLib();
 
 public:
-	void run();
+	void run(XgObject &object);
 
 private:
 	GLFWwindow* window;
@@ -194,8 +198,11 @@ private:
 	VkImageView textureImageView;
 	VkSampler textureSampler;
 
+	// Object Attributes
+	//------------------
 	std::vector<Vertex> vertices;
 	std::vector<uint32_t> indices;
+
 	VkBuffer vertexBuffer;
 	VkDeviceMemory vertexBufferMemory;
 	VkBuffer indexBuffer;
@@ -259,7 +266,7 @@ private:
 	void createImage(uint32_t width, uint32_t height, uint32_t mipLevels, VkSampleCountFlagBits numSamples, VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage, VkMemoryPropertyFlags properties, VkImage& image, VkDeviceMemory& imageMemory);
 	void transitionImageLayout(VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout, uint32_t mipLevels);
 	void copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height);
-	void loadModel();
+	//void loadModel();
 	void createVertexBuffer();
 	void createIndexBuffer();
 	void createUniformBuffers();

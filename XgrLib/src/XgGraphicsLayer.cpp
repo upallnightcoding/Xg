@@ -11,9 +11,9 @@ XgGraphicsLayer::~XgGraphicsLayer()
 {
 }
 
-void XgGraphicsLayer::display()
+void XgGraphicsLayer::display(XgObject &object)
 {
 	XgVLib scene;
 
-	scene.run();
+	scene.run(object);
 }

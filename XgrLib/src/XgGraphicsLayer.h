@@ -1,4 +1,7 @@
 #pragma once
+
+#include "XgObject.h"
+
 class XgGraphicsLayer
 {
 public:
@@ -6,6 +9,6 @@ public:
 	virtual ~XgGraphicsLayer();
 
 public:
-	void display();
+	void display(XgObject &object);
 };
 
